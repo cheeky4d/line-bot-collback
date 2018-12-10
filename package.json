@@ -1,0 +1,22 @@
+{
+  "name": "line-bot-collback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Netiwut/line-bot-collback.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Netiwut/line-bot-collback/issues"
+  },
+  "homepage": "https://github.com/Netiwut/line-bot-collback#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
