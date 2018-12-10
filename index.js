@@ -12,12 +12,13 @@ express()
     .set('view engine', 'ejs')
     .post('/', (req, res) => {
       let reply_token = req.body.events[0].replyToken
-      reply(reply_token)
+      let msg = req.body.events[0].message.text
+      reply(reply_token, msg)
       res.sendStatus(200)
     })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-  function reply(reply_token) {
+  function reply(reply_token, msg) {
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer {4EsKNf/CN1c5fUaTuyINPM7Q7nizwxZRGceXgLhZyYR4DV/03j8VqnmPiyEjfrdWY6hpjvk0UhwS/AgmPfenIeSsXQWVm1o3pm9KdrlDhI5YeZdWX/mOkpD2XFzdG+TG4EEoay0VcPbtlW8WPFBS1QdB04t89/1O/w1cDnyilFU=}'
@@ -26,11 +27,7 @@ express()
         replyToken: reply_token,
         messages: [{
             type: 'text',
-            text: 'Hello'
-        },
-        {
-            type: 'text',
-            text: 'How are you?'
+            text: msg
         }]
     })
     request.post({
