@@ -20,7 +20,7 @@ express()
   function reply(reply_token) {
     let headers = {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer {4EsKNf/CN1c5fUaTuyINPM7Q7nizwxZRGceXgLhZyYR4DV/03j8VqnmPiyEjfrdWY6hpjvk0UhwS/AgmPfenIeSsXQWVm1o3pm9KdrlDhI5YeZdWX/mOkpD2XFzdG+TG4EEoay0VcPbtlW8WPFBS1QdB04t89/1O/w1cDnyilFU=}'
+        'Authorization': 'Bearer 4EsKNf/CN1c5fUaTuyINPM7Q7nizwxZRGceXgLhZyYR4DV/03j8VqnmPiyEjfrdWY6hpjvk0UhwS/AgmPfenIeSsXQWVm1o3pm9KdrlDhI5YeZdWX/mOkpD2XFzdG+TG4EEoay0VcPbtlW8WPFBS1QdB04t89/1O/w1cDnyilFU='
     }
     let body = JSON.stringify({
         replyToken: reply_token,
