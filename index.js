@@ -11,9 +11,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.post('/webhooks', (req, res) => {
-    let reply_token = req.body.events[0].replyToken
-    let msg = req.body.events[0].message.text
-    reply(reply_token, msg)
+    //let reply_token = req.body.events[0].replyToken
+    //let msg = req.body.events[0].message.text
+    //reply(reply_token, msg)
     res.sendStatus(200)
 })
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
