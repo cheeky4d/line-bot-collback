@@ -1,5 +1,7 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 4000
-app.post('/webhook', (req, res) => res.sendStatus(200))
-app.listen(port)
+const express = require('express');
+
+const app = express();
+app.post('/webhooks', (req, res) => res.sendStatus(200))
+app.get('/', (req, res) => res.sendStatus(200))
+
+app.listen(4000, () => console.log('Server started on port 4000'));
