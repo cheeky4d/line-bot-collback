@@ -1,7 +1,10 @@
-const express = require('express');
+const express = require('express')
+const path = require('path')
+const PORT = process.env.PORT || 5000
 
-const app = express();
-app.post('/webhooks', (req, res) => res.sendStatus(200))
-app.get('/', (req, res) => res.end('<h1>Hello World</h1>'))
-
-app.listen(4000, () => console.log('Server started on port 4000'));
+express()
+  .use(express.static(path.join(__dirname, 'public')))
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => res.render('pages/index'))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
