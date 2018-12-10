@@ -1,22 +1,27 @@
-// Reply with two static messages
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
+const path = require('path')
+
 const app = express()
-const port = process.env.PORT || 4000
+const PORT = process.env.PORT || 5000
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.post('/webhook', (req, res) => {
+app.use(express.static(path.join(__dirname, 'public')))
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+app.post('/webhooks', (req, res) => {
     let reply_token = req.body.events[0].replyToken
-    reply(reply_token)
+    let msg = req.body.events[0].message.text
+    reply(reply_token, msg)
     res.sendStatus(200)
 })
-app.listen(port)
+app.listen(PORT, () => console.log(`Listening on ${PORT}`))
+
 function reply(reply_token) {
     let headers = {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer {pIloLFsx82B264vmCPdRBykEaBQqqkgUMtfWmlqmiqsFARP3vzoWHMRDJY1HvHdZY6hpjvk0UhwS/AgmPfenIeSsXQWVm1o3pm9KdrlDhI5/ZSes1Kr78t45wDcw7PSW2rGuFkhHdUcxUElCQMj+oQdB04t89/1O/w1cDnyilFU=}'
+        'Authorization': 'Bearer {h3MOG4XttJfbMVHWMLjavfqiiNxix9LqFhujfrCMI7Fp2IaFJp9ONJYOyM6y4g+nY6hpjvk0UhwS/AgmPfenIeSsXQWVm1o3pm9KdrlDhI46+sSjRXOwzhTgIVbiMrbsLJ97VtvoBoMAui+B5T2q+AdB04t89/1O/w1cDnyilFU=}'
     }
     let body = JSON.stringify({
         replyToken: reply_token,
