@@ -14,7 +14,7 @@ express()
     let reply_token = req.body.events[0].replyToken
     let msg = req.body.events[0].message.text
     console.log(req.body.events);
-    reply(reply_token, JSON.stringify(req.body.events))
+    reply(reply_token, msg)
     res.sendStatus(200)
   })
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
@@ -42,14 +42,14 @@ function reply(reply_token, msg) {
 
 function messages(msg) {
   return msg
-//   switch (msg) {
-//     case "สวัสดี":
-//       return "หวัดดีไอสัส"
-//     case "ทำอะไรอยู่":
-//       return "อ่านหนังสือ"
-//     case "ชื่ออะไร":
-//       return "ชื่อไรก็ได้โตแล้ว"
-//     default:
-//       return "xxxxx"
-//   }
+  switch (msg) {
+    case "สวัสดี":
+      return "หวัดดีไอสัส"
+    case "ทำอะไรอยู่":
+      return "อ่านหนังสือ"
+    case "ชื่ออะไร":
+      return "ชื่อไรก็ได้โตแล้ว"
+    default:
+      return "xxxxx"
+  }
 }
