@@ -13,6 +13,7 @@ express()
   .post('/', (req, res) => {
     let reply_token = req.body.events[0].replyToken
     let msg = req.body.events[0].message.text
+    console.log(req.body.events[0]);
     reply(reply_token, msg)
     res.sendStatus(200)
   })
@@ -48,6 +49,6 @@ function messages(msg) {
     case "ชื่ออะไร":
       return "ชื่อไรก็ได้โตแล้ว"
     default:
-      return "พิมพ์ไรมาสัส กูโง่ พิมพ์มาใหม่"
+      return "xxxxx"
   }
 }
