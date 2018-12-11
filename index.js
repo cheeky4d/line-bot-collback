@@ -41,7 +41,6 @@ function reply(reply_token, msg) {
 }
 
 function messages(msg) {
-  return msg
   switch (msg) {
     case "สวัสดี":
       return "สวัสดีครับเราคือ ฟาร์มเจ้านาย"
