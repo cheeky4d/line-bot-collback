@@ -13,8 +13,8 @@ express()
   .post('/', (req, res) => {
     let reply_token = req.body.events[0].replyToken
     let msg = req.body.events[0].message.text
-    console.log(req.body.events);
-    reply(reply_token, req.body.events)
+    console.log(req.body.events[0].source.userId);
+    reply(reply_token, req.body.events[0].source.userId)
     res.sendStatus(200)
   })
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
