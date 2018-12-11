@@ -21,7 +21,8 @@ express()
 function reply(reply_token, msg) {
   let headers = {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer {4EsKNf/CN1c5fUaTuyINPM7Q7nizwxZRGceXgLhZyYR4DV/03j8VqnmPiyEjfrdWY6hpjvk0UhwS/AgmPfenIeSsXQWVm1o3pm9KdrlDhI5YeZdWX/mOkpD2XFzdG+TG4EEoay0VcPbtlW8WPFBS1QdB04t89/1O/w1cDnyilFU=}'
+    'Authorization': 'Bearer {DKEDzTHZXm1K7Pn8AlsqJahFCVtEVab4YafO9XdLgfHBO4nn3+31RdkQIkiYYUmZS8iPzrJs1SXxtRHV/qhKi+SuKZAG2gQZQXk4qpPSRNy13ajj71DGaHlx8RjGaUzdhHOPa+oCoTOzt2QC5Srq2QdB04t89/1O/w1cDnyilFU=
+}'
   }
   let body = JSON.stringify({
     replyToken: reply_token,
