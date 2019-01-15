@@ -11,6 +11,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .post('/', (req, res) => {
+  console.log("REQ : ",req);
     let reply_token = req.body.events[0].replyToken
     let msg = req.body.events[0].message.text
     console.log(req.body.events);
